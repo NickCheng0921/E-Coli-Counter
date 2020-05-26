@@ -1,6 +1,7 @@
 % written by Nick Cheng
 function thresholdExtract(counter, testVideo, levelVal, seSizeDoub, cellFile)
-
+clc;
+disp(counter);
 rgbImage = read(testVideo, counter);
 
 %use calibrated values
@@ -22,7 +23,8 @@ eccentricities = [stats.Eccentricity];
 idBacteria = find(eccentricities);
 statsDefects = stats(idBacteria);
 numBacteria = num2str(numObjects);
-
-fprintf(cellFile,'%d\n', numBacteria);
+%writing numBacteria to File gives weird results, numObjects correctly
+%matches title image
+fprintf(cellFile,'%d\n', numObjects);
 
 end
