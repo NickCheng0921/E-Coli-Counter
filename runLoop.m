@@ -1,6 +1,6 @@
 %written by NC
 %video info
-testVideo = VideoReader('02.19.2020-0uM-LRhamnose-1-3.avi');
+testVideo = VideoReader('02.19.2020-100uM-LRhamnose-1-3.avi');
 lastFrame = read(testVideo, inf);
 nFrames = testVideo.NumberOfFrames;
 
@@ -20,11 +20,11 @@ end
 
 fclose(cellFile);
 
-%show plot of # of cells counted
-finalResultCount = load('cellFile.txt');
-
-figure
-plot(smooth(finalResultCount));
-title('Cells Counted in Video')
-xlabel('Frame')
-ylabel('Cells Counted')
+% %show plot of # of cells counted
+% finalResultCount = load('cellFile.txt');
+% 
+% figure
+% plot(smooth(finalResultCount));
+% title('Cells Counted in Video')
+% xlabel('Frame')
+% ylabel('Cells Counted')

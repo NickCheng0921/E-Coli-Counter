@@ -18,24 +18,32 @@ BWNew = imopen(BW, se);
 stats = regionprops(labeled,'Eccentricity', 'Area', 'BoundingBox');
     %areas = [stats.Area];
 eccentricities = [stats.Eccentricity];
-%% use feature analysis to count bacteria
+
+%% use feature analysis to find bacteria positions
 idBacteria = find(eccentricities);
 statsDefects = stats(idBacteria);
 numBacteria = num2str(numObjects);
+
+fprintf(cellFile,'Frame: %d Cell# X Y\n', counter);
+for id = 1 : length(idBacteria)
+    cellXPos = statsDefects(id).BoundingBox(1);
+    cellYPos = statsDefects(id).BoundingBox(2);
+    fprintf(cellFile,'C%d %.1f %.1f ', id, cellXPos, cellYPos); %write positions to file
+end %loop to write cell positions to text file
+fprintf(cellFile, '\n');
+
 %% display results every 100th frame
 if ~mod(counter, 100)
-close;
-figure, imshow(rgbImage);
-hold on;
-for id = 1 : length(idBacteria)
-    h = rectangle('Position', statsDefects(id).BoundingBox); %draw box around bacteria
-    set(h, 'EdgeColor', [.75 0 0]);
+    close;
+    figure, imshow(rgbImage);
     hold on;
-end
-title(['There are ', numBacteria, ' bacteria in frame']);
-hold off;
-end
-%writing numBacteria to File gives weird results, numObjects correctly
-fprintf(cellFile,'%d\n', numObjects);
+    for id = 1 : length(idBacteria)
+        h = rectangle('Position', statsDefects(id).BoundingBox); %draw box around bacteria
+        set(h, 'EdgeColor', [.75 0 0]);
+        hold on;
+    end
+    title(['There are ', numBacteria, ' bacteria in frame']);
+    hold off;
+end %if statement end
 
-end
+end %function end
