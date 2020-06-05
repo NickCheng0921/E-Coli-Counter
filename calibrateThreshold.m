@@ -35,7 +35,7 @@ seSize = 0;
 while(true)
     %get radius input and convert to a double
     seSize = inputdlg('Enter radius of filter in pixels, enter nothing to continue:',...
-             'Sample', [1 50]);
+             'Sample', [1 50]); %seSize is a string
     if(seSize == "") 
         break
     end
