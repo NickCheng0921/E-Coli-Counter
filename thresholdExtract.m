@@ -24,11 +24,10 @@ idBacteria = find(eccentricities);
 statsDefects = stats(idBacteria);
 numBacteria = num2str(numObjects);
 
-fprintf(cellFile,'Frame: %d Cell# X Y\n', counter);
 for id = 1 : length(idBacteria)
     cellXPos = statsDefects(id).BoundingBox(1);
     cellYPos = statsDefects(id).BoundingBox(2);
-    fprintf(cellFile,'C%d %.1f %.1f ', id, cellXPos, cellYPos); %write positions to file
+    fprintf(cellFile,'C%d%.1f %.1f', id, cellXPos, cellYPos); %write positions to file
 end %loop to write cell positions to text file
 fprintf(cellFile, '\n');
 
