@@ -2,7 +2,8 @@ function analyzePositions(nFrames)
 clc;
 close;
 cellFile = fopen('cellFile.txt', 'r');
-%only plots last frame right now
+%%  Displays bacteria x and y coordinates
+%%  only plots last frame right now
 for i = 1 : 1
     fileRow = fgetl(cellFile);
     x = split(fileRow, "C");

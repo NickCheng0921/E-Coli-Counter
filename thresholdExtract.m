@@ -1,10 +1,10 @@
 % written by Nick Cheng
+%%  called every frame to count bacteria and record positions
 function thresholdExtract(counter, testVideo, levelVal, seSizeDoub, cellFile)
 clc;
 disp(counter);
 rgbImage = read(testVideo, counter);
 
-%use calibrated values
 BW = im2bw(rgbImage,levelVal);
 %flip black and white (easier to see)
 BW = imcomplement(BW);
@@ -31,7 +31,7 @@ for id = 1 : length(idBacteria)
 end %loop to write cell positions to text file
 fprintf(cellFile, '\n');
 
-%% display results every 100th frame
+%% display counted cells on an image every 100th frame
 if ~mod(counter, 100)
     close;
     figure, imshow(rgbImage);
