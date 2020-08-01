@@ -12,13 +12,11 @@ cellFile = fopen('cellFile.txt', 'w');
 global levelVal seSizeDoub;
 [seSizeDoub, levelVal] = calibrateThreshold(testVideo);
 disp('calibration done');
-disp(seSizeDoub);
-disp(levelVal);
 
 %% analyze frame by frame  
 close;
 clc;
-for i = 1 : nFrames
+for i = 1 : 10 %nFrames
     counter = i;
     thresholdExtract(counter, testVideo, levelVal, seSizeDoub, cellFile);
 end

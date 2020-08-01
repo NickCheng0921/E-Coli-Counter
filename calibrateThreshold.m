@@ -35,9 +35,7 @@ disp('thresh level');
 disp(levelVal);
 
 %% remove noise with structuring elements
-%seSize used to be default value, but it has some weird scalar error with
-%strel now, if used as default?
-seSizeDoub = 2;
+seSizeDoub = 0;
 while(true)
     %get radius input and convert to a double
     filterDialogue = inputdlg('Enter radius of filter in pixels, enter nothing to continue:',...
