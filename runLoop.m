@@ -16,10 +16,10 @@ disp('calibration done');
 %% analyze frame by frame  
 close;
 clc;
-for i = 1 : 10 %nFrames
+for i = 1 : nFrames
     counter = i;
     thresholdExtract(counter, testVideo, levelVal, seSizeDoub, cellFile);
 end
 
 fclose(cellFile);
-analyzePositions(nFrames);
+%analyzePositions(nFrames);
