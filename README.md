@@ -1,7 +1,7 @@
 # E-Coli-Counter
 
 Script that turns mp4 videos of bacteria into gifs of their tracked movements. This project was made to assist in my lab work at Texas A&m, and also to better understand MATLAB's capabilities. 
-
+![Bacteria Gif](/images/bacteria.gif "bacteria GIF")
 ## Project Overview
 
 ### Thresholding
