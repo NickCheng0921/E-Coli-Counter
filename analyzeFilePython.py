@@ -12,6 +12,7 @@ except OSError:
 #open File, has to be in same directory
 testFile = open("cellFile.txt", 'r')
 counter = 0
+lineArr = []
 #go line by line through file
 for i in testFile:
     counter += 1
@@ -19,18 +20,13 @@ for i in testFile:
     #get x values
     xVal = []
     for j in range(len(lineArr)):
-        if((j-1)%4 == 0 or j==1):
+        if((j)%3 == 1 or j==1):
             xVal.append(float(lineArr[j]))
     #get y values
     yVal = []
     for j in range(len(lineArr)):
-        if((j-2)%4 == 0 or j==2):
+        if((j)%3 == 2 or j==2):
             yVal.append(float(lineArr[j]))
-    #get minAxis of fitted ellipse
-    axis = []
-    for j in range(len(lineArr)):
-        if((j-3)%4 == 0 or j==3):
-            axis.append(float(lineArr[j]))
     #display data
 #color maps for scatterplot https://matplotlib.org/examples/color/colormaps_reference.html
     #color indexes are relative to each other based on t value, actual value doesn't matter

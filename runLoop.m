@@ -1,6 +1,6 @@
 %written by NC
 %video info, change vidName to select different videos
-vidName = '02.19.2020-100uM-LRhamnose-1-3.avi';
+vidName = 'colivid.avi';
 testVideo = VideoReader(vidName);
 lastFrame = read(testVideo, inf);
 nFrames = testVideo.NumberOfFrames;

@@ -14,7 +14,6 @@ levelVal = 0.3;
 BW = im2bw(rgbImage,levelVal);
 BW = imcomplement(BW);
 while(true)
-    %break;
     level = inputdlg('Enter threshold level between 0 and 1, enter nothing to continue:',...
              'Sample', [1 50]);
     if(level == "") 
