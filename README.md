@@ -5,8 +5,8 @@ Script that turns mp4 videos of bacteria into gifs of their tracked movements. T
 <p align="center">
     <img src="/images/bacteria.gif" alt = "bacteria GIF">
 </p>
-## 
-## Project Overview
+
+<h2> Project Overview </h2>
 
 ### Thresholding
 
